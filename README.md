@@ -84,3 +84,8 @@ Easily start your Reactive RESTful Web Services
 Monitor your application's health using SmallRye Health
 
 [Related guide section...](https://quarkus.io/guides/smallrye-health)
+
+## References:
+
+https://programmaticponderings.com/tag/k8s/
+

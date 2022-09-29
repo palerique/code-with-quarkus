@@ -1,4 +1,4 @@
-package com.github.palerique;
+package com.github.palerique.config;
 
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
