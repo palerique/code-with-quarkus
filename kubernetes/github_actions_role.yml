@@ -1,0 +1,39 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: code-with-quarkus-deployer
+rules:
+  - apiGroups:
+      - ""
+      - "rbac.authorization.k8s.io"
+      - "apps"
+      - "autoscaling"
+      - "batch"
+      - "acme.cert-manager.io"
+      - "cert-manager.io"
+      - "extensions"
+      - "metrics.k8s.io"
+      - "networking.k8s.io"
+      - "policy"
+    resources: ["*"]
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: code-with-quarkus-deployment
+roleRef:
+  kind: Role
+  apiGroup: rbac.authorization.k8s.io
+  name: code-with-quarkus-deployer
+subjects:
+  - kind: Group
+    name: eks-code-with-quarkus-deployment-group
+    apiGroup: rbac.authorization.k8s.io
